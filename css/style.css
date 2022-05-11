@@ -113,6 +113,19 @@ hr {
     opacity: .3;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-container-box {
+    flex: 50%;
+}
+
+.flex-container-box-left {
+    padding-right: 3rem;
+}
+
 /* Left */
 section {
     margin-bottom: 3rem;
@@ -190,4 +203,5 @@ footer{
     font-family: 'Roboto Serif', sans-serif;
     font-size: 1.6rem;
     border-radius: 10px;
+    margin-top: 8rem;
 }
