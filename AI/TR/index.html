@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Furkan Dede | Kıdemli Yazılım Mühendisi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #2980b9;
+      --background: #f6f6f6;
+      --accent: #e67e22;
+      --section-bg: #fff;
+      --text-main: #222;
+      --text-sub: #555;
+      --border-radius: 7px;
+    }
+    body {
+      background: var(--background);
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      color: var(--text-main);
+      line-height: 1.5;
+      font-size: 15px;
+    }
+    .cv-container {
+      max-width: 900px;
+      margin: 20px auto;
+      background: var(--section-bg);
+      box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      padding: 28px 18px 18px 18px;
+    }
+    .cv-header {
+      border-bottom: 2px solid var(--secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      gap: 8px;
+    }
+    .cv-header-main {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      flex: 1 1 auto;
+    }
+    .cv-header h1 {
+      color: var(--primary);
+      margin: 0;
+      font-size: 1.55em;
+      letter-spacing: 1px;
+    }
+    .cv-header h2 {
+      color: var(--secondary);
+      margin: 0 0 2px 0;
+      font-size: 1.05em;
+      font-weight: 500;
+    }
+    .contact {
+      font-size: 0.98em;
+      color: var(--text-sub);
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+    .contact .icon-link {
+      text-decoration: none;
+      color: var(--secondary);
+      margin-left: 0;
+      margin-right: 6px;
+      font-size: 1.18em;
+      transition: color 0.18s;
+      vertical-align: middle;
+    }
+    .contact .icon-link:hover {
+      color: var(--accent);
+    }
+    .cv-photo {
+      flex: 0 0 auto;
+      margin-left: 24px;
+      margin-right: 0;
+      margin-top: 0;
+      display: flex;
+      align-items: flex-start;
+    }
+    .cv-photo img {
+      width: 110px;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+      background: #eee;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+      display: block;
+    }
+    .cv-section {
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+    .cv-section-title {
+      font-size: 1em;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      margin-top: 0;
+      border-left: 4px solid var(--secondary);
+      padding-left: 8px;
+    }
+    .cv-summary {
+      font-size: 0.98em;
+      margin-bottom: 0;
+      color: var(--text-main);
+    }
+    ul {
+      margin: 0 0 0 16px;
+      padding: 0;
+    }
+    .skill-list, .other-list, .project-list, .edu-list, .cert-list, .course-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .skill-list li, .other-list li, .project-list li, .edu-list li, .cert-list li, .course-list li {
+      margin-bottom: 6px;
+    }
+    .cv-job {
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+    .cv-job-title {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .cv-job-company {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    .cv-job-dates {
+      color: var(--text-sub);
+      font-size: 0.93em;
+      margin-bottom: 3px;
+    }
+    .cv-project-title {
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 1px;
+    }
+    .cv-edu-degree {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .cv-edu-school {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    .cv-edu-dates {
+      color: var(--text-sub);
+      font-size: 0.93em;
+    }
+    .cv-cert-title {
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .cv-footer {
+      text-align: right;
+      color: #bbb;
+      font-size: 0.92em;
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid #e9e9e9;
+      page-break-inside: avoid;
+    }
+    @media print {
+      body, .cv-container {
+        background: #fff !important;
+        box-shadow: none !important;
+      }
+      .cv-container {
+        margin: 0 !important;
+        padding: 10mm 8mm 6mm 8mm !important;
+        width: auto !important;
+        max-width: 100% !important;
+      }
+      .cv-header, .cv-footer, .cv-section {
+        page-break-inside: avoid !important;
+      }
+      .cv-footer {
+        margin-top: 2mm !important;
+        padding-top: 2mm !important;
+        font-size: 0.8em !important;
+      }
+      .cv-section {
+        margin-bottom: 12px !important;
+      }
+      html, body {
+        font-size: 12.5px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    @media (max-width: 700px) {
+      .cv-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .cv-header-main {
+        align-items: center;
+      }
+      .cv-photo {
+        margin: 0 0 12px 0;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <div class="cv-header">
+      <div class="cv-header-main">
+        <h1>Furkan DEDE</h1>
+        <h2>Kıdemli Yazılım Mühendisi</h2>
+        <div class="contact">
+          İstanbul | +90 534 746 67 28 | furkandede@outlook.com.tr
+          <a class="icon-link" href="https://github.com/fdede" target="_blank" aria-label="Github">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/furkandede/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="cv-photo">
+        <img src="../../img/FDEDE.jpg" alt="Furkan Dede Fotoğrafı">
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">PROFESYONEL ÖZET</div>
+      <div class="cv-summary">
+        7+ yıllık yazılım geliştirme tecrübesiyle finans, bankacılık ve kurumsal süreç otomasyonu alanlarında uzmanlaştım. C#, .NET, Angular ve modern web teknolojileriyle yüksek performanslı uygulamalar geliştirdim. Analitik düşünme, takım çalışması ve çözüm odaklı yaklaşımım ile katma değer sağlayan projelerde etkin rol aldım. Sürekli öğrenmeye ve teknolojik gelişmeleri takip etmeye önem veriyorum.
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">TEKNİK YETKİNLİKLER</div>
+      <ul class="skill-list">
+        <li><strong>Programlama Dilleri:</strong> C#, T-SQL, JavaScript, VBScript</li>
+        <li><strong>Frameworkler:</strong> .NET, Angular, Bootstrap</li>
+        <li><strong>Veritabanı:</strong> MS SQL Server</li>
+        <li><strong>Web Teknolojileri:</strong> HTML, CSS</li>
+        <li><strong>Araçlar & Diğer:</strong> Git, Jira, Confluence</li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">İŞ DENEYİMLERİ</div>
+      <div class="cv-job">
+        <div class="cv-job-title">Senior Software Engineer</div>
+        <div class="cv-job-company">Sovos Turkey</div>
+        <div class="cv-job-dates">Temmuz 2022 – Devam Ediyor</div>
+        <ul>
+          <li>e-invoice, e-archive, e-despatch ve e-receipt gibi finansal ürünlerin geliştirilmesinde görev aldım.</li>
+          <li>Yeni modüllerin tasarımı, geliştirilmesi ve mevcut sistemlerin iyileştirilmesinde aktif rol üstlendim.</li>
+        </ul>
+      </div>
+      <div class="cv-job">
+        <div class="cv-job-title">Senior Software Engineer</div>
+        <div class="cv-job-company">Linkitera</div>
+        <div class="cv-job-dates">Ocak 2021 – Haziran 2022</div>
+        <ul>
+          <li>Alternatif Bank için müşteri kazanım süreçleri, bankacılık uygulamaları ve çeşitli projelerde yazılım geliştirdim.</li>
+          <li>Süreç otomasyonları ve entegrasyon projelerinde görev aldım.</li>
+        </ul>
+      </div>
+      <div class="cv-job">
+        <div class="cv-job-title">Software Consultant</div>
+        <div class="cv-job-company">Mechsoft</div>
+        <div class="cv-job-dates">Şubat 2018 – Ocak 2021</div>
+        <ul>
+          <li>Büyük ölçekli müşteriler için doküman ve süreç dijitalleştirme çözümleri geliştirdim.</li>
+          <li>.Net Framework, VBS, Angular ve Vault Application Framework (VAF) ile uygulamalar geliştirdim.</li>
+          <li>Proje yönetimi, kullanıcı eğitimi ve teknik destek sağladım.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">PROJELERDEN SEÇMELER</div>
+      <ul class="project-list">
+        <li>
+          <span class="cv-project-title">Middleware:</span>
+          Sovos bünyesinde, Foriba dışındaki farklı şirketlerin fatura işlemlerinde ortak bir ara katman olarak kullandığı Middleware servisinin geliştirilmesinde ve şirketlerin bu servisi etkin şekilde kullanabilmesi için yapılan entegrasyon çalışmalarında yer aldım.
+        </li>
+        <li>
+          <span class="cv-project-title">Alternatif Bank:</span>
+          Yeni teknolojiler ile müşteri kazanım, kredi kartı başvurusu, mevduat ve otomatik ödeme projeleri.
+        </li>
+        <li>
+          <span class="cv-project-title">Tüpraş:</span>
+          M-Files üzerine geçiş, süreç dijitalizasyonu, doküman yönetimi, kalite, satın alma, bilgi güvenliği projeleri.
+        </li>
+        <li>
+          <span class="cv-project-title">Tofaş:</span>
+          Sözleşme ve sipariş süreçlerinin Oracle DB ile dijitalleştirilmesi.
+        </li>
+        <li>
+          <span class="cv-project-title">Northern Marmara Highway:</span>
+          Giden-gelen evrak yönetimi, süreçlerin dijitalizasyonu ve rezervasyon projeleri.
+        </li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">EĞİTİM</div>
+      <ul class="edu-list">
+        <li>
+          <span class="cv-edu-degree">Endüstri Mühendisliği Lisans Derecesi</span>  
+          <span class="cv-edu-school">Karabük Üniversitesi</span>  
+          <span class="cv-edu-dates">2012 – 2017 | Mezuniyet Notu: 3.08 / 4.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">SERTİFİKALAR</div>
+      <ul class="cert-list">
+        <li>
+          <span class="cv-cert-title">Microsoft Certified Professional (MCP)</span> – Bilge Adam, 02.2018
+        </li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">KURS VE EĞİTİMLER</div>
+      <ul class="course-list">
+        <li>Udemy – Full-Stack Web Development Eğitimi (110 saat)</li>
+        <li>Udemy – C# Beginner & Advanced (75 saat)</li>
+        <li>Bilge Adam – NBUY IT Uzmanlık Eğitimi (800 saat)</li>
+        <li>Dilko – İngilizce Upper-Intermediate (178 saat)</li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <div class="cv-section-title">DİĞER BİLGİLER</div>
+      <ul class="other-list">
+        <li><strong>Yabancı Dil:</strong> İngilizce (Intermediate)</li>
+        <li><strong>Askerlik Durumu:</strong> Yapıldı</li>
+        <li><strong>Ehliyet:</strong> B Sınıfı (Aktif, 2021)</li>
+        <li><strong>Doğum Tarihi:</strong> 14.05.1994</li>
+        <li><strong>Hobiler:</strong> Motosiklet, Snowboard, Seyahat Etmek</li>
+      </ul>
+    </div>
+
+    <div class="cv-footer">
+      © 2025 Furkan Dede
+    </div>
+  </div>
+</body>
+</html>
