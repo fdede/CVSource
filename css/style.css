@@ -2,7 +2,7 @@
     --orange: #ff9900;
     --opacOrange: #FFCA7A;
     --paragraph: 1.7rem;
-    --paragraphColor: #0d1e27;
+    --paragraphColor: #000000;
   }
 
 * {
@@ -17,7 +17,7 @@ html {
 
 body {
     color: var(--paragraphColor);
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -53,7 +53,7 @@ a {
 #container {
     width: 95rem;
     margin: 0 auto;
-    background-color: #ffebcc;
+    background-color: #ffffff;
     padding: 6rem;
 }
 
@@ -66,7 +66,7 @@ a {
 }
 
 img {
-    width: 12rem;
+    width: 16rem;
     height: auto;
     border: 1px solid black;
 }
@@ -162,36 +162,11 @@ section {
     border-radius: 1.3rem;
     background-color: var(--opacOrange);
     color: var(--paragraphColor);
-    
 }
 
-
-/* Right */
-.skill {
-    margin-bottom: 3rem;
-}
-
-.skill-title {
-    font-size: 2rem;
-    padding-bottom: .4rem;
-}
-
-.dgree-container {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: .4rem;
-}
-
-.degree {
-    width: 1.8rem;
-    height: 1.8rem;
-    display: inline-block;
-    transform: skewX(-22deg);
-    background: var(--orange);
-}
-
-.empty {
-    opacity: .2;
+.other {
+    margin-bottom: 1rem;
+    font-size: var(--paragraph);
 }
 
 /* Footer */
